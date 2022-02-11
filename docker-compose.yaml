@@ -1,0 +1,19 @@
+version: "3"
+
+services: 
+    python:
+        image: koichiroiijima/optimize_allocation:20220115
+        working_dir: /opt/app
+        ports: 
+            - 8888:8888
+        volumes:
+            - "./data/:/opt/app/"
+        tty: true
+        command:
+            - "jupyter-lab"
+            - "--allow-root"
+            - "--no-browser"
+            - "--ip=0.0.0.0"
+            - "--port=8888"
+            - "--LabApp.token=''"
+            - "-y"
