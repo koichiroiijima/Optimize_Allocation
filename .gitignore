@@ -187,3 +187,4 @@ cython_debug/
 *.vsix
 
 
+data/PyPortfolioOpt/*
