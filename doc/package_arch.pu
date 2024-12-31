@@ -1,0 +1,48 @@
+@startuml package
+left to right direction
+' Horizontal lines: -->, <--, <-->
+' Vertical lines: ->, <-, <->
+title Packages: Optimize Allocation
+
+package InputLoader #DDDDDD{
+    class DataLoader
+    class PriceData
+}
+
+package Optimizer #DDDDDD{
+    Interface AllocationOptimizer
+    class MeanVarOptimizer
+    class BlackLittermanOptimizer
+}
+
+package OptionsStore #DDDDDD {
+    class Methods
+    class Parameters
+}
+
+package Tester #DDDDDD {
+    class DataSplitter
+    class BackTester
+    class NoteBook
+}
+
+package Infrastructure {
+    class BaseImages
+    class DataStore
+    class PackageCreater
+}
+
+package Output #DDDDDD {
+    class GraphView
+    class AllocationData
+    class PerformanceData
+}
+
+package DataPipeline #DDDDDD {
+    class OptimizerPipeline
+
+    OptimizerPipeline *-- DataLoader
+    OptimizerPipeline *-- AllocationOptimizer
+}
+
+@enduml
